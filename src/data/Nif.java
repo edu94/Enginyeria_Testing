@@ -2,7 +2,13 @@ package data;
 
 final public class Nif {
     private final String nif;
-    public Nif(String nif) { this.nif = nif; }
+    public Nif(String nif) throws Exception {
+        if(nif == null){
+            throw new Exception("Nif invalid");
+        }
+        this.nif = nif;
+    }
+
     public String getNif() { return nif; }
 
     @Override

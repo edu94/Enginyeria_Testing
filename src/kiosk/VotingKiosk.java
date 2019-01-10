@@ -1,16 +1,30 @@
 package kiosk;
 
-import data.MailAddress;
-import  data.Party;
+
+import data.*;
 import services.*;
 
 public class VotingKiosk {
 
-    ???
-    public VotingKiosk() { ??? }
-    public void setElectoralOrganism(ElectoralOrganism eO) { ??? }
-    public void setMailerService(MailerService mService){ ???}
+    private ElectoralOrganism eO;
+    private MailerService mService;
+    private VoteCounter voteCounter;
 
-    public void vote(Party party) { ??? }
-    public void sendeReceipt(MailAddress address) { ??? }
+
+    public VotingKiosk() {
+
+    }
+    public void setElectoralOrganism(ElectoralOrganism eO) {
+        this.eO = eO;
+    }
+    public void setMailerService(MailerService mService){
+        this.mService= mService;
+    }
+
+    public void vote(Party party) {
+        voteCounter.scrutinize(party);
+    }
+    public void sendeReceipt(MailAddress address) {
+
+    }
 }

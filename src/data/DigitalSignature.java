@@ -1,9 +1,20 @@
 package data;
 
+import java.util.Arrays;
+
 final public class DigitalSignature {
-    private final String sign;
-    public DigitalSignature(String sign) { this.sign = sign; }
-    public String getSign() { return sign; }
+    private final byte[] sign;
+
+    public DigitalSignature(byte[] sign) throws Exception {
+        if(sign == null){
+            throw new Exception("DigitalSignature error");
+        }
+        this.sign = sign;
+    }
+
+    public byte[] getDigitalsignature() {
+        return sign;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -18,7 +29,7 @@ final public class DigitalSignature {
 
     @Override
     public String toString() {
-        return "DigitalSignature{" + "sign='" + sign + '\'' + '}';
+        return "DigitalSignature{" + "digitalsignature='" + Arrays.toString(sign) + '\'' + '}';
     }
 
 }

@@ -2,7 +2,13 @@ package data;
 
 final public class MailAddress {
     private final String mail;
-    public MailAddress(String mail) { this.mail = mail; }
+    public MailAddress(String mail) throws Exception {
+        if(mail == null){
+            throw new Exception("MailAdress invalid");
+        }
+        this.mail = mail;
+    }
+
     public String getMail() { return mail; }
 
     @Override

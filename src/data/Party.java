@@ -3,7 +3,14 @@ package data;
 final public class Party {
 
     private final String name;
-    public Party(String name) { this.name = name; }
+
+    public Party(String name) throws Exception {
+        if(name == null){
+            throw new Exception("Name invalid");
+        }
+        this.name = name;
+    }
+
     public String getName() { return name; }
 
     @Override
